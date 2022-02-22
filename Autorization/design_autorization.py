@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(350, 160)
+        MainWindow.setMinimumSize(QtCore.QSize(350, 160))
+        MainWindow.setMaximumSize(QtCore.QSize(350, 160))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../../../../../Users/vikto/.vscode/MyWork/SQL_sign/Autorization/sign in.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("background-color: rgb(0, 160, 0);")
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.lineEdit_login = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_login.setGeometry(QtCore.QRect(30, 20, 290, 30))
+        font = QtGui.QFont()
+        font.setFamily("MS Gothic")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_login.setFont(font)
+        self.lineEdit_login.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.lineEdit_login.setStyleSheet("border-radius: 5px;\n"
+"background-color: rgb(240, 240, 240);")
+        self.lineEdit_login.setText("")
+        self.lineEdit_login.setMaxLength(30)
+        self.lineEdit_login.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_login.setObjectName("lineEdit_login")
+        self.lineEdit_password = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_password.setGeometry(QtCore.QRect(30, 60, 290, 30))
+        font = QtGui.QFont()
+        font.setFamily("MS Gothic")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_password.setFont(font)
+        self.lineEdit_password.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.lineEdit_password.setStyleSheet("border-radius: 5px;\n"
+"background-color: rgb(240, 240, 240);")
+        self.lineEdit_password.setText("")
+        self.lineEdit_password.setMaxLength(16)
+        self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineEdit_password.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_password.setObjectName("lineEdit_password")
+        self.btn_sign = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_sign.setGeometry(QtCore.QRect(30, 110, 140, 30))
+        font = QtGui.QFont()
+        font.setFamily("MS Gothic")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.btn_sign.setFont(font)
+        self.btn_sign.setStyleSheet("background-color: rgb(0, 240, 0);")
+        self.btn_sign.setObjectName("btn_sign")
+        self.btn_registration = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_registration.setGeometry(QtCore.QRect(180, 110, 140, 30))
+        font = QtGui.QFont()
+        font.setFamily("MS Gothic")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btn_registration.setFont(font)
+        self.btn_registration.setStyleSheet("background-color: rgb(0, 240, 0);")
+        self.btn_registration.setObjectName("btn_registration")
+        
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Autorization"))
+        self.lineEdit_login.setPlaceholderText(_translate("MainWindow", "Enter login"))
+        self.lineEdit_password.setPlaceholderText(_translate("MainWindow", "Enter password"))
+        self.btn_sign.setText(_translate("MainWindow", "Sign &in"))
+        self.btn_registration.setText(_translate("MainWindow", "Sign &up"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
